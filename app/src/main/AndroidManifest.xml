@@ -10,16 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PenguTV">
         <activity
-            android:name=".AdministratorRequests"
-            android:exported="false" />
-        <activity
-            android:name=".AdministratorReviews"
-            android:exported="false" />
-        <activity
-            android:name=".AdministratorUsers"
-            android:exported="true" />
-        <activity
-            android:name=".AdministratorAnime"
+
             android:exported="true" />
         <activity
             android:name=".MainActivity"
