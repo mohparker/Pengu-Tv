@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".AdministratorUsers"
+    android:background="@drawable/premium_dark">
+
+
+
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".AdministratorUsers"
+    tools:ignore="MissingConstraints"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            />
+
+        <ImageView
+            android:id="@+id/userIcon"
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.9"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.05"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Users"
+            android:textColor="@color/white"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintHorizontal_bias="0.178"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+
+            />
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="___________________________________________"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/AddUserHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_help"
+
+            />
+
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/ic_baseline_assignment_ind_24"
+            android:layout_width="200dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textColorHint="#696969"
+            android:hint="   First Name"
+            android:layout_marginHorizontal="140dp"/>
+
+        <EditText
+            android:id="@+id/edtLastName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Last Name"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_baseline_assignment_ind_24"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Email"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Username"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_person"
+            android:drawableTint="@color/white"/>
+
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Password"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawableTint="@color/white"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/btnAddUser"
+            android:background="@drawable/outline_button"
+            android:text="Add User"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="55dp"
+
+            />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="___________________________________________"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            />
+        <Button
+            android:id="@+id/UpdateUserHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_help"
+            android:textColor="@color/white"
+            />
+        <EditText
+            android:id="@+id/edtUpdateName"
+            android:layout_height="match_parent"
+            android:drawableStart="@drawable/ic_baseline_assignment_ind_24"
+            android:layout_width="200dp"
+            android:text=""
+            android:textColor="@color/white"
+            android:textColorHint="#696969"
+            android:hint="   First Name"
+            android:layout_marginHorizontal="140dp"/>
+
+        <EditText
+            android:id="@+id/edtUpdateLastName"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Last Name"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_baseline_assignment_ind_24"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Email"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Username"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_person"
+            android:drawableTint="@color/white"/>
+
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Password"
+            android:textColorHint="#696969"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_lock"
+            android:drawableTint="@color/white"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+        <Button
+            android:id="@+id/Update"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/outline_button"
+            android:text="Update User"
+            android:textColor="@color/white"
+            android:layout_marginHorizontal="55dp"/>
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="___________________________________________"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+        <Button
+            android:id="@+id/DeleteUserHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_help"
+            android:textColor="@color/white"
+            />
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Email"
+            android:textColor="@color/white"
+            android:textColorHint="#696969"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_baseline_email_24"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Username"
+            android:textColor="@color/white"
+            android:textColorHint="#696969"
+            android:drawableTint="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_person"/>
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   Password"
+            android:textColor="@color/white"
+            android:textColorHint="#696969"
+            android:drawableTint="@color/white"
+            android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_lock"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Delete"
+            android:background="@drawable/outline_button"
+            android:text="Delete User"
+            android:layout_marginHorizontal="55dp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="___________________________________________"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+        <Button
+            android:id="@+id/SearchUsersHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_help"
+            android:textColor="@color/white"
+            />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:hint="   UserName"
+            android:textColor="@color/white"
+            android:textColorHint="#696969"
+            android:drawableTint="@color/white"
+             android:layout_marginHorizontal="140dp"
+            android:drawableStart="@drawable/ic_person"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/Search"
+            android:background="@drawable/outline_button"
+            android:text="Search"
+            android:layout_marginHorizontal="55dp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="___________________________________________"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+        <Button
+            android:id="@+id/ViewAllUsersHelp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="360dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:drawableStart="@drawable/ic_help"
+            android:textColor="@color/white"
+            />
+
+        <Button
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/View"
+            android:background="@drawable/outline_button"
+            android:text="View All Users"
+            android:layout_marginHorizontal="55dp"
+            android:textColor="@color/white"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="___________________________________________"
+            android:textAlignment="center"
+            android:textColor="@color/white"/>
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"/>
+
+
+
+    </LinearLayout>
+</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

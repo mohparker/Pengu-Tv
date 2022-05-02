@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/icLogout"
+        android:title="Logout"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_logout"/>
+    <item
+        android:title=""
+        android:enabled="false"
+        app:showAsAction="always"/>
+    <item
+        android:title=""
+        android:enabled="false"
+        app:showAsAction="always"/>
+
+    <item
+    android:title=""
+        android:enabled="false"
+    app:showAsAction="always"/>
+
+    <item android:id="@+id/icUsers"
+    android:icon="@drawable/ic_baseline_people_24"
+    android:title="Users"
+    app:showAsAction="always|withText"
+
+    />
+
+
+    <item android:id="@+id/icAnime"
+        android:icon="@drawable/ic_baseline_tv_24"
+        android:title="Anime"
+        app:showAsAction="always|withText"/>
+
+
+
+    <item android:id="@+id/icReviews"
+        android:icon="@drawable/ic_baseline_rate_review_24"
+        android:title="Reviews"
+        app:showAsAction="always|withText"/>
+
+    <item android:id="@+id/icRequests"
+        android:icon="@drawable/ic_baseline_emoji_people_24"
+        android:title="Requests"
+        app:showAsAction="always|withText"
+        />
+
+
+
+</menu>

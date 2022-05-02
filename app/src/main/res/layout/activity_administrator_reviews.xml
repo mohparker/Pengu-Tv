@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdministratorReviews"
+    android:background="@drawable/premium_dark">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".AdministratorUsers"
+        tools:ignore="MissingConstraints"
+        >
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                />
+
+            <ImageView
+                android:id="@+id/reviewIcon"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.9"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.05"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Reviews"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintHorizontal_bias="0.178"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+
+                />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="___________________________________________"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
+            <Button
+                android:id="@+id/DeleteReviewHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="360dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableStart="@drawable/ic_help"
+
+                />
+
+
+            <EditText
+                android:id="@+id/edtReviewName"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_baseline_live_tv_24"
+                android:layout_width="200dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textColorHint="#696969"
+                android:hint="   Anime Name"
+                android:layout_marginHorizontal="140dp"/>
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:hint="   UserName"
+                android:textColorHint="#696969"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="140dp"
+                android:drawableStart="@drawable/ic_person"
+                android:drawableTint="@color/white"/>
+
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:hint="   Personal Rating"
+                android:inputType="numberDecimal"
+                android:textColorHint="#696969"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="140dp"
+                android:drawableStart="@drawable/ic_baseline_star_rate_24"
+                android:drawableTint="@color/white"/>
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:hint="   Rating Number"
+                android:inputType="number"
+                android:textColorHint="#696969"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="140dp"
+                android:drawableStart="@drawable/ic_baseline_123_24"
+                android:drawableTint="@color/white"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/btnDeleteReview"
+                android:background="@drawable/outline_button"
+                android:text="Delete Review"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="55dp"
+                />
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="___________________________________________"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                />
+            <Button
+                android:id="@+id/SearchAnimeHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="360dp"
+                android:background="?android:attr/selectableItemBackground"
+                android:drawableStart="@drawable/ic_help"
+                android:textColor="@color/white"
+                />
+            <EditText
+                android:id="@+id/edtAnimeName"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_baseline_live_tv_24"
+                android:layout_width="200dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textColorHint="#696969"
+                android:hint="   Anime Name"
+                android:layout_marginHorizontal="140dp"/>
+
+            <EditText
+                android:id="@+id/edtUsername"
+                android:layout_height="match_parent"
+                android:drawableStart="@drawable/ic_person"
+                android:layout_width="200dp"
+                android:text=""
+                android:textColor="@color/white"
+                android:textColorHint="#696969"
+                android:drawableTint="@color/white"
+                android:hint="   Username"
+                android:layout_marginHorizontal="140dp"/>
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:hint="   Review Number"
+                android:textColorHint="#696969"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="140dp"
+                android:drawableStart="@drawable/ic_baseline_123_24"
+                android:drawableTint="@color/white"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <Button
+                android:id="@+id/btnSearchReview"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/outline_button"
+                android:text="Search Review"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="55dp"/>
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="___________________________________________"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:hint="   Anime Name"
+                android:textColorHint="#696969"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="140dp"
+                android:drawableStart="@drawable/ic_baseline_live_tv_24"
+                android:drawableTint="@color/white"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <Button
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/View"
+                android:background="@drawable/outline_button"
+                android:text="View Reviews"
+                android:layout_marginHorizontal="55dp"
+                android:textColor="@color/white"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="___________________________________________"
+                android:textAlignment="center"
+                android:textColor="@color/white"/>
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
