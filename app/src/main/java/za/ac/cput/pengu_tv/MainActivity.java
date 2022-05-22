@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 
+import com.android.application.R;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

@@ -10,6 +10,8 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.android.application.R;
+
 public class AdminLogin extends AppCompatActivity {
 
     @Override
