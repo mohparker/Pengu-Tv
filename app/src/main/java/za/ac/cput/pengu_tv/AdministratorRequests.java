@@ -15,6 +15,8 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.android.application.R;
+
 public class AdministratorRequests extends AppCompatActivity {
     AlertDialog.Builder builder;
     @Override

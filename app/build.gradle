@@ -3,6 +3,7 @@ plugins {
 }
 
 android {
+    namespace 'com.android.application'
     compileSdk 31
 
     defaultConfig {
