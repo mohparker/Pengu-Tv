@@ -2,7 +2,14 @@
 <project version="4">
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
-      <map />
+      <map>
+        <entry key="..\:/Users/pc/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_administrator_anime.xml" value="0.25" />
+        <entry key="..\:/Users/pc/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_administrator_requests.xml" value="0.12158054711246201" />
+        <entry key="..\:/Users/pc/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_administrator_reviews.xml" value="0.25" />
+        <entry key="..\:/Users/pc/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_administrator_users.xml" value="0.264" />
+        <entry key="..\:/Users/pc/StudioProjects/Pengu-Tv/app/src/main/res/layout/my_dropdown_item.xml" value="0.24895833333333334" />
+        <entry key="..\:/Users/pc/StudioProjects/Pengu-Tv/app/src/main/res/layout/my_selected_item.xml" value="0.12107396149949341" />
+      </map>
     </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
