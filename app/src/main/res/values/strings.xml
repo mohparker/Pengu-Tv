@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name"></string>
+    <string-array name="genres">
+        <item>Select Genre</item>
+        <item>Action</item>
+        <item>School</item>
+        <item>Shonen</item>
+        <item>Comedy</item>
+        <item>Sports</item>
+        <item>Martial Arts</item>
+    </string-array>
 </resources>
