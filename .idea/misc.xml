@@ -3,21 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_arrow_back_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_assignment_ind_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_check_box_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_emoji_people_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_live_tv_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_people_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_star_rate_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/drawable/ic_baseline_tv_24.xml" value="0.2475" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_admin_login.xml" value="0.24495677233429394" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_administrator_users.xml" value="0.13703703703703704" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_main.xml" value="0.13703703703703704" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_test.xml" value="0.358695652173913" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_user_login.xml" value="0.1" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_user_registration.xml" value="0.25" />
-        <entry key="..\:/Users/mraaz/StudioProjects/Pengu-Tv/app/src/main/res/layout/activity_userlogin.xml" value="0.25" />
+
       </map>
     </option>
   </component>
