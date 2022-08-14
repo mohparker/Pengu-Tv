@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" >
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application
         android:allowBackup="true"
@@ -8,23 +8,27 @@
         android:roundIcon="@mipmap/pengu_icon"
         android:supportsRtl="true"
         android:theme="@style/Theme.PenguTV">
-
+        <activity
+            android:name="za.ac.cput.pengu_tv.UserRegistration"
+            android:exported="true" />
+        <activity
+            android:name="za.ac.cput.pengu_tv.UserLogin"
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"/>
-
+            android:exported="true" />
         <activity
             android:name=".AdministratorUsers"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".AdministratorReviews"
             android:exported="true" />
         <activity
             android:name=".AdministratorRequests"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".AdministratorAnime"
-            android:exported="true"/>
+            android:exported="true" />
         <activity
             android:name=".AdminLogin"
             android:exported="true">
@@ -33,9 +37,7 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
     </application>
 
 </manifest>
