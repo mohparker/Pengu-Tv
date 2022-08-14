@@ -188,11 +188,6 @@ public class AdministratorUsers extends AppCompatActivity {
                 else if(edtAddEmail.getText().toString().contains("@gmail.com")){
                     insertUser();
 
-                    edtAddName.getText().clear();
-                    edtAddLastName.getText().clear();
-                    edtAddUsername.getText().clear();
-                    edtAddEmail.getText().clear();
-                    edtAddPassword.getText().clear();
 
                   }
                 else if (!edtAddEmail.getText().toString().contains("@gmail.com")){
@@ -240,7 +235,16 @@ public class AdministratorUsers extends AppCompatActivity {
     }
     //--------------Database Functions--------------//
     public void insertUser() {
-
+        checkUserEmail = edtAddEmail.getText().toString();
+        checkUserUsername = edtAddUsername.getText().toString();
+        myDb = new DBHelper(getApplicationContext());
+        sqLiteDatabase = myDb.getReadableDatabase();
+        Cursor emailCheck, usernameCheck;
+        emailCheck = myDb.checkUserEmail(checkUserEmail, sqLiteDatabase);
+        usernameCheck = myDb.checkUserUsername(checkUserUsername, sqLiteDatabase);
+        if (emailCheck.moveToFirst() || usernameCheck.moveToFirst()) {
+            Toast.makeText(this, "There is already an account with that username or email!", Toast.LENGTH_SHORT).show();
+        } else {
             boolean isInserted = myDb.insertUser(
                     edtAddName.getText().toString(),
                     edtAddLastName.getText().toString(),
@@ -252,11 +256,16 @@ public class AdministratorUsers extends AppCompatActivity {
             if (isInserted == true) {
 
                 Toast.makeText(this, "Account Created!", Toast.LENGTH_SHORT).show();
+                edtAddName.getText().clear();
+                edtAddLastName.getText().clear();
+                edtAddUsername.getText().clear();
+                edtAddEmail.getText().clear();
+                edtAddPassword.getText().clear();
 
 
             } else {
                 Toast.makeText(this, "Unable to make account!", Toast.LENGTH_SHORT).show();
-            }
+            }}
 
     }
     public void updateUser(){

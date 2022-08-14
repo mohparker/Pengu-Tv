@@ -254,12 +254,22 @@ private CheckBox cboAddAnimeOngoing;
 
     //----------------Database Function For Add-----------------//
     public void insertAnime() {
+        checkTitle=edtAddAnimeName.getText().toString();
+
+        myDb= new DBHelper(getApplicationContext());
+        sqLiteDatabase= myDb.getReadableDatabase();
+        Cursor titleCheck,ratingCheck;
+        titleCheck= myDb.checkAnimeTitle(checkTitle,sqLiteDatabase);
+
         String isChecked;
         if (cboAddAnimeOngoing.isChecked() == true) {
             isChecked = "Yes";
         } else {
             isChecked = "No";
         }
+        if (titleCheck.moveToFirst()){
+            Toast.makeText(this, "That anime already exists!", Toast.LENGTH_SHORT).show();
+        }else{
         boolean isInserted = myDb.insertAnime(edtAddAnimeName.getText().toString(),
                 edtAddAnimeDescription.getText().toString(),
 
@@ -272,7 +282,7 @@ private CheckBox cboAddAnimeOngoing;
         }
         else{
             Toast.makeText(this, "Could not add new anime!", Toast.LENGTH_SHORT).show();
-        }
+        }}
         }
         //-------Database Function For GetAll--------//
     public void getAllAnime(){
