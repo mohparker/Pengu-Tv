@@ -19,6 +19,7 @@ private EditText edtUsername,edtpassword;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
@@ -31,6 +32,7 @@ private EditText edtUsername,edtpassword;
 
 
         Button btnLogin = findViewById(R.id.btnLogin);
+        Button goRegBtn = findViewById(R.id.Register);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,6 +46,14 @@ private EditText edtUsername,edtpassword;
                     Toast.makeText(AdminLogin.this, "The username or password is incorrect!", Toast.LENGTH_SHORT).show();
                 }
 
+            }
+        });
+
+        goRegBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(AdminLogin.this, UserRegistration.class);
+                startActivity(intent);
             }
         });
     }
