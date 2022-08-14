@@ -11,17 +11,28 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.math.MathUtils;
 
 import com.android.application.R;
+
+import java.nio.Buffer;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.DoubleStream;
+import java.util.stream.IntStream;
 
 import za.ac.cput.pengu_tv.util.DBHelper;
 
@@ -29,9 +40,15 @@ public class AdministratorReviews extends AppCompatActivity {
 
     DBHelper mydb;
     SQLiteDatabase sqLiteDatabase;
+    String id,name,animename;
+    Double average,sub,tracer;
+
+
+    int i;
     //-----Add Review Variables-----//
-    private EditText edtAddReviewAnime, edtAddReviewUsername, edtAddReviewDescription, edtAddReviewRating;
+    private EditText edtAddReviewUsername, edtAddReviewDescription, edtAddReviewRating;
     private String checkUsername,checkReviewId;
+    private Spinner spAddReviewAnime;
 
     //-----Update Review Variables------//
     private EditText edtUpdateReviewId, edtUpdateReviewUsername, edtUpdateReviewDescription, edtUpdateReviewRating;
@@ -44,6 +61,8 @@ public class AdministratorReviews extends AppCompatActivity {
     private EditText edtSearchReviewId;
     private TextView txtReviewId,txtReviewUserId,txtReviewAnimeId,txtReviewDescription,txtReviewRating;
     String animeName,username, reviewId;
+    //------View Review----//
+    private EditText edtViewReview;
 
     AlertDialog.Builder builder;
     AlertDialog.Builder builderHelp;
@@ -56,11 +75,15 @@ public class AdministratorReviews extends AppCompatActivity {
         setContentView(R.layout.activity_administrator_reviews);
         ImageView myImageView2= findViewById(R.id.reviewIcon);
         myImageView2.setImageResource(R.drawable.ic_baseline_rate_review_24);
+
+
         builder= new AlertDialog.Builder(this);
         builderHelp= new AlertDialog.Builder(this);
         //-----Set Text Fields For Add-----//
         mydb= new DBHelper(this);
-        edtAddReviewAnime= (EditText) findViewById(R.id.edtAddReviewAnime);
+        //------------List to view all anime---------//
+
+
         edtAddReviewUsername= (EditText) findViewById(R.id.edtAddReviewUserName);
         edtAddReviewDescription= (EditText) findViewById(R.id.edtAddReviewAnimeDescription);
         edtAddReviewRating= (EditText) findViewById(R.id.edtAddReviewAnimeRating);
@@ -80,12 +103,59 @@ public class AdministratorReviews extends AppCompatActivity {
         //-----Set Text Fields For Search----//
 
         edtSearchReviewId= (EditText) findViewById(R.id.edtSearchFindReviewId);
+        //------Set Text Fields For View Review------//
+        edtViewReview= (EditText) findViewById(R.id.edtViewReview);
 
         txtReviewId= findViewById(R.id.txtReviewId);
         txtReviewUserId= findViewById(R.id.txtReviewUserId);
         txtReviewAnimeId= findViewById(R.id.txtReviewAnimeId);
         txtReviewDescription= findViewById(R.id.txtReviewDescription);
         txtReviewRating= findViewById(R.id.txtReviewRating);
+
+        //--------Pull All Anime--------//
+        Cursor res;
+        res=mydb.viewAllAnime();
+        i=0;
+        average=0.0;
+         String[]  anime=new String[res.getCount()];
+
+
+
+        while (res.moveToNext()) {
+
+            id= (res.getString(0));
+           name=(res.getString(1));
+
+
+
+            anime[i]=name;
+            i++;
+        }
+        i=0;
+        tracer= 0.0;
+        Cursor getRatings;
+        getRatings=mydb.viewAllReview();
+        Double[] ratings= new Double[getRatings.getCount()];
+        while(getRatings.moveToNext()){
+
+            sub=getRatings.getDouble(5);
+
+            ratings[i]=sub;
+
+
+            tracer= ratings[i]+tracer;
+            ++i;
+        }
+
+
+        Toast.makeText(this, String.valueOf(tracer), Toast.LENGTH_SHORT).show();
+
+        spAddReviewAnime= findViewById(R.id.spinnerAddReviewAnime);
+        ArrayAdapter adapter = new ArrayAdapter(getApplicationContext(),R.layout.my_selected_item,anime);
+        adapter.setDropDownViewResource(R.layout.my_dropdown_item);
+
+        spAddReviewAnime.setAdapter(adapter);
+
         btnAddReviewHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -173,7 +243,8 @@ public class AdministratorReviews extends AppCompatActivity {
         btnAddReview.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(edtAddReviewAnime.getText().toString().isEmpty()||
+
+                if(
                 edtAddReviewUsername.getText().toString().isEmpty()||
                 edtAddReviewDescription.getText().toString().isEmpty()||
                 edtAddReviewRating.getText().toString().isEmpty())
@@ -192,9 +263,14 @@ public class AdministratorReviews extends AppCompatActivity {
         btnViewReviews.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getAllReviews();
+                if (edtViewReview.getText().toString().isEmpty()){
+                    Toast.makeText(AdministratorReviews.this, "There are empty fields!", Toast.LENGTH_SHORT).show();
+                }else {
+                    getAllReviews();
+                }
             }
         });
+
         //-----Button Update Review-----//
         Button btnUpdateReview= findViewById(R.id.btnUpdateReview);
         btnUpdateReview.setOnClickListener(new View.OnClickListener() {
@@ -231,33 +307,51 @@ public class AdministratorReviews extends AppCompatActivity {
     //----------Database Functions----------//
     //-----Insert Review Section-----//
     public void insertReview(){
+
+       animename=spAddReviewAnime.getSelectedItem().toString();
+
+
         checkUsername= edtAddReviewUsername.getText().toString();
-        checkReviewId=edtAddReviewAnime.getText().toString();
+
         mydb= new DBHelper(getApplicationContext());
         sqLiteDatabase= mydb.getReadableDatabase();
         Cursor userCheck,animeCheck;
+
         userCheck= mydb.checkUsernameReview(checkUsername,sqLiteDatabase);
-        animeCheck=mydb.checkAnimeReview(checkReviewId,sqLiteDatabase);
+        animeCheck=mydb.checkAnimeReview(animename,sqLiteDatabase);
 
         if(userCheck.moveToFirst() && animeCheck.moveToFirst()){
+            double rating;
+
             String userId=userCheck.getString(0);
             String animeId=animeCheck.getString(0);
+            rating= Double.valueOf(animeCheck.getString(2));
+            Toast.makeText(this, String.valueOf(rating), Toast.LENGTH_SHORT).show();
             boolean isInserted= mydb.insertReview(edtAddReviewDescription.getText().toString(),
                     Double.valueOf(edtAddReviewRating.getText().toString()),userId,animeId);
+//Update
 
+average=rating+tracer+Double.valueOf(edtAddReviewRating.getText().toString());
+
+                boolean isUpdated = mydb.updateAnimeRating(animeId,average);
+                if (isUpdated==true){
+                Toast.makeText(this, String.valueOf(average), Toast.LENGTH_SHORT).show();
+            }
 
 
             if (isInserted==true) {
                 Toast.makeText(this, "Review Added! " , Toast.LENGTH_SHORT).show();
                 edtAddReviewRating.getText().clear();
                 edtAddReviewDescription.getText().clear();
-                edtAddReviewAnime.getText().clear();
+
                 edtAddReviewUsername.getText().clear();
             }
+
+
         }else{
             Toast.makeText(this, "Anime name or username does not match or exist!", Toast.LENGTH_SHORT).show();
             edtAddReviewUsername.getText().clear();
-            edtAddReviewAnime.getText().clear();
+
         }
     }
     //-----Update Review Section-----//
@@ -363,6 +457,8 @@ public class AdministratorReviews extends AppCompatActivity {
 
     //-----View All-----//
     public void getAllReviews(){
+
+        int animeId=Integer.valueOf(edtViewReview.getText().toString());
         Cursor res;
         res=mydb.viewAllReview();
         String getReviewAmount;

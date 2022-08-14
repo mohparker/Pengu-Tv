@@ -8,7 +8,7 @@
     tools:context=".AdminLogin">
 
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/edtUsername"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:drawableStart="@drawable/ic_person"
@@ -27,13 +27,14 @@
         app:layout_constraintVertical_bias="0.35" />
 
     <EditText
-        android:id="@+id/btnPassword"
+        android:id="@+id/edtPassword"
         android:layout_width="300dp"
         android:layout_height="60dp"
         android:drawableStart="@drawable/ic_lock"
         android:drawableTint="@color/white"
         android:ems="10"
         android:hint="   Password"
+        android:inputType="textPassword"
         android:textColor="#FFFFFF"
         android:textColorHint="#696969"
         android:textSize="20dp"
