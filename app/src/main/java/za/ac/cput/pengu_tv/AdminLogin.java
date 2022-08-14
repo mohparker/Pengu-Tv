@@ -18,6 +18,7 @@ public class AdminLogin extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+
         requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
@@ -26,11 +27,20 @@ public class AdminLogin extends AppCompatActivity {
         myImageView5.setImageResource(R.drawable.pengu_tv);
 
         Button btnLogin = findViewById(R.id.btnLogin);
+        Button goRegBtn = findViewById(R.id.Register);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent= new Intent(AdminLogin.this, AdministratorUsers.class);
+                startActivity(intent);
+            }
+        });
+
+        goRegBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent= new Intent(AdminLogin.this, UserRegistration.class);
                 startActivity(intent);
             }
         });
