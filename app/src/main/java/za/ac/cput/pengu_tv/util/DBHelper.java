@@ -2,6 +2,7 @@ package za.ac.cput.pengu_tv.util;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -188,6 +189,17 @@ public boolean updateAnime(String animeTitle, String animeDescription, String an
 
     return true;
 }
+    public boolean updateAnimeRating(String animeTitle, double ratingAverage){
+        SQLiteDatabase db= this.getWritableDatabase();
+        ContentValues contentValues= new ContentValues();
+        contentValues.put(ANIMECOLUMN_4,animeTitle);
+
+        contentValues.put(ANIMECOLUMN_10,ratingAverage);
+
+        db.update(ANIME_TABLE_NAME,contentValues,"ANIMETITLE = ?",(new String[]{animeTitle}));
+
+        return true;
+    }
 public Cursor viewAllAnime(){
     SQLiteDatabase sqLiteDatabase= this.getWritableDatabase();
     Cursor res;
@@ -228,12 +240,13 @@ public boolean insertReview(String reviewDescription, double personalRating,Stri
         return true;
     }
 public Cursor checkAnimeReview(String animeName,SQLiteDatabase db){
-    String[] projections={ANIMECOLUMN_1,ANIMECOLUMN_4};
+    String[] projections={ANIMECOLUMN_1,ANIMECOLUMN_4,ANIMECOLUMN_10};
     String selection= ANIMECOLUMN_4+ " LIKE ?" ;
     String[] selectionArgs={animeName};
     Cursor res= db.query(ANIME_TABLE_NAME,projections,selection,selectionArgs,null,null,null);
     return res;
 }
+
 public Cursor  checkUsernameReview(String username,SQLiteDatabase db){
     String[] projections={COLUMN_1 ,COLUMN_5};
     String selection= COLUMN_5+" LIKE ?";
@@ -268,6 +281,7 @@ public boolean updateReview(String reviewId,String reviewDescription, double rev
     return true;
 
 }
+
 public Integer deleteReview(int reviewId){
 SQLiteDatabase db= this.getWritableDatabase();
 return db.delete(REVIEWS_TABLE_NAME,"REVIEWID = ?",new String[] {String.valueOf(reviewId)});
@@ -281,10 +295,27 @@ return db.delete(REVIEWS_TABLE_NAME,"REVIEWID = ?",new String[] {String.valueOf(
         return res;
     }
     public Cursor viewAllReview(){
+    /*String selection= ANIMECOLUMN_1+ " LIKE ? ";
+   String[] selection_args= {String.valueOf(animeId)};
+   String[] projections = {REVIEWCOLUMN_1,REVIEWCOLUMN_2,REVIEWCOLUMN_3,REVIEWCOLUMN_5,REVIEWCOLUMN_6};*/
+
         SQLiteDatabase sqLiteDatabase= this.getWritableDatabase();
 
         Cursor res;
         res= sqLiteDatabase.rawQuery("select * from "+REVIEWS_TABLE_NAME,null);
         return res;
     }
+
+   /* public double getAverage(String animeName){
+    SQLiteDatabase db= this.getReadableDatabase();
+    Cursor res = db.rawQuery("select (AVG(RATING)) from " +REVIEWS_TABLE_NAME+" where ANIMETITLE = ? ", new String[]{animeName});
+    return res;
+    }
+public Cursor calculateReview() {
+    ContentValues contentValues= new ContentValues();
+    contentValues.put(ANIMECOLUMN_1,animeId);
+    SQLiteDatabase sqLiteDatabase = this.getWritableDatabase();
+    Cursor res;
+    res= sqLiteDatabase.rawQuery(" AVERAGE " +" SELECT "+REVIEWCOLUMN_1+" from "+ REVIEWS_TABLE_NAME +" WHERE "+ANIMECOLUMN_1+ " = ? ");
+*/
 }

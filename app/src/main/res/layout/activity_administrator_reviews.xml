@@ -77,16 +77,17 @@
                 android:drawableStart="@drawable/ic_help"
 
                 />
-            <EditText
-                android:id="@+id/edtAddReviewAnime"
+            <Spinner
+                android:id="@+id/spinnerAddReviewAnime"
                 android:layout_height="match_parent"
                 android:drawableStart="@drawable/ic_baseline_live_tv_24"
                 android:layout_width="200dp"
-                android:text=""
+
                 android:textColor="@color/white"
                 android:textColorHint="#696969"
-                android:hint="   Anime Name"
+                android:hint="   Genre"
                 android:layout_marginHorizontal="140dp"/>
+
             <EditText
                 android:id="@+id/edtAddReviewUserName"
                 android:layout_height="match_parent"
@@ -415,6 +416,17 @@
                 android:textColor="@color/white"
                 />
 
+            <EditText
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:id="@+id/edtViewReview"
+                android:hint="   Aniem Id"
+                android:textColorHint="#696969"
+                android:textColor="@color/white"
+                android:layout_marginHorizontal="140dp"
+                android:drawableStart="@drawable/ic_baseline_123_24"
+                android:drawableTint="@color/white"/>
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="20dp"/>
